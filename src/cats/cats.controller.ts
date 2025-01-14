@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';
+import { Cat } from './interfaces/cat.interface';
 
 @Controller('cats')
 export class CatsController {
@@ -9,11 +10,11 @@ export class CatsController {
 
   @Post()
   create(@Body() createCatDto: CreateCatDto) {
-    return this.catsService.create(createCatDto);
+    // return this.catsService.create(createCatDto);
   }
 
   @Get()
-  findAll() {
+  findAll(): Promise<Cat[]> {
     return this.catsService.findAll();
   }
 
