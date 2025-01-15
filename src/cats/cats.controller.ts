@@ -17,7 +17,7 @@ import { CatsService } from './cats.service';
 import { CreateCatDto, createCatSchema } from './dto/create-cat.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';
 import { Cat } from './interfaces/cat.interface';
-import { LoggingInterceptor } from './logging.interceptor';
+import { LoggingInterceptor } from '../logging.interceptor';
 
 @Controller('cats')
 @UseGuards(RolesGuard)
